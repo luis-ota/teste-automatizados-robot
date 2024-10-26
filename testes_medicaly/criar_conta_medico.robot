@@ -33,15 +33,23 @@ Caso de Teste 04 - Criar conta de medico"
     Sleep    1
 
     Digitar "Medico" no input "nome" em cadastro medico
-    Sleep    .1
-    Digitar "12345678909" no input "cpf" em cadastro medico
+    Digitar "Da silva" no input "sobrenome" em cadastro medico
     Digitar "05/01/2005" no input "dataNascimento" em cadastro medico
+    Digitar "Medico" no input "nome" em cadastro medico
+    Digitar "12345678909" no input "cpf" em cadastro medico
+    Digitar "1234567" no input "credencialDeSaude" em cadastro medico
     Digitar "medico@email.com" no input "email" em cadastro medico
     Digitar "41998798238" no input "telefone" em cadastro medico
-    Digitar "1234567" no input "credencialDeSaude" em cadastro medico
     Digitar "123qwe" no input "senha" em cadastro medico
 
-    Digitar "Da silva" no input sobrenome em cadastro medico
+    Digitar "10:00" no input "7" horario no cadastro medico
+    Digitar "16:00" no input "8" horario no cadastro medico
+
+    Marcar "16" em "especialidadesIds"
+    Marcar "17" em "atuacoesIds"
+
+
+
 
     Sleep    100
 
