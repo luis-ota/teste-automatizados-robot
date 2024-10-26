@@ -25,17 +25,22 @@ Digitar "${input}" no input "${campo}" do formulario de cadastro
 Digitar "${input}" no input "${campo}" em cadastro medico
     Input Text      //input[contains(@ng-reflect-name, "${campo}")]    ${input}
 
-Digitar "${input}" no input "${campo}" horario no cadastro medico
-    Input Text     //*[@id="mat-input-${campo}"]    ${input}
+Selecionar "${input}" no input "${campo}" horario "${naoaguentomais}" no cadastro medico
+    Click Element    //*[contains(@ng-reflect-name, "${naoaguentomais}")]
+    Click Element    //html/body/ngx-material-timepicker-container/div[2]/ngx-material-timepicker-content/div/div/div[2]/div[2]/ngx-material-timepicker-button/button
+    Sleep    1
+
 
 Digitar "${input}" no input "${campo}"
     Input Text      //*[@id="mat-input-${campo}"]    ${input}
     
 Marcar "${opcao}" em "${campo}"
     Click Element    //*[contains(@ng-reflect-name, "${campo}")]
-    Sleep    .2
+    Sleep    .5
     Click Element    //*[@id="mat-option-${opcao}"]
-    Click Element    //html/body/div[2]/div[1]
+    Click Element    //html/body/div[2]
+
+
 
 
 Digitar "${input}" no input "${campo}" do formulario de endereco

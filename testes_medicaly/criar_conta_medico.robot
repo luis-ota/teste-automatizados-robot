@@ -31,6 +31,7 @@ Caso de Teste 04 - Criar conta de medico"
 
     Clicar em adicionar medico
     Sleep    1
+    Abrir NavLateral
 
     Digitar "Medico" no input "nome" em cadastro medico
     Digitar "Da silva" no input "sobrenome" em cadastro medico
@@ -42,11 +43,16 @@ Caso de Teste 04 - Criar conta de medico"
     Digitar "41998798238" no input "telefone" em cadastro medico
     Digitar "123qwe" no input "senha" em cadastro medico
 
-    Digitar "10:00" no input "7" horario no cadastro medico
-    Digitar "16:00" no input "8" horario no cadastro medico
+    Digitar "10:00" no input "7" horario "inicioExpediente" no cadastro medico
+    Digitar "16:00" no input "8" horario "fimExpediente" no cadastro medico
+
 
     Marcar "16" em "especialidadesIds"
     Marcar "17" em "atuacoesIds"
+    Marcar "0" em "diasAtendidos"
+#    Marcar "7" em "unidadeId"
+
+    Clicar em prossegir
 
 
 
