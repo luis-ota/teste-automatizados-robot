@@ -1,6 +1,6 @@
 .venv
 .idea
-/testes_medicaly/log.html
-/testes_medicaly/output.xml
-/testes_medicaly/report.html
+/log.html
+/output.xml
+/report.html
 *.png

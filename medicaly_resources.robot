@@ -25,9 +25,11 @@ Digitar "${input}" no input "${campo}" do formulario de cadastro
 Digitar "${input}" no input "${campo}" em cadastro medico
     Input Text      //input[contains(@ng-reflect-name, "${campo}")]    ${input}
 
-Selecionar "${input}" no input "${campo}" horario "${naoaguentomais}" no cadastro medico
+Selecionar "${input}" em "${naoaguentomais}" no cadastro medico
     Click Element    //*[contains(@ng-reflect-name, "${naoaguentomais}")]
+    Click Element    //html/body/ngx-material-timepicker-container/div[2]/ngx-material-timepicker-content/div/div/div[1]/div/ngx-material-timepicker-24-hours-face/ngx-material-timepicker-face/div/div/div[${input}]/span
     Click Element    //html/body/ngx-material-timepicker-container/div[2]/ngx-material-timepicker-content/div/div/div[2]/div[2]/ngx-material-timepicker-button/button
+
     Sleep    1
 
 
@@ -35,10 +37,17 @@ Digitar "${input}" no input "${campo}"
     Input Text      //*[@id="mat-input-${campo}"]    ${input}
     
 Marcar "${opcao}" em "${campo}"
+    Scroll Element Into View    //*[contains(@ng-reflect-name, "${campo}")]
     Click Element    //*[contains(@ng-reflect-name, "${campo}")]
     Sleep    .5
     Click Element    //*[@id="mat-option-${opcao}"]
     Click Element    //html/body/div[2]
+
+Marcar "${opcao}" em "${campo}" sem overlay
+    Scroll Element Into View    //*[contains(@ng-reflect-name, "${campo}")]
+    Click Element    //*[contains(@ng-reflect-name, "${campo}")]
+    Sleep    .5
+    Click Element    //*[@id="mat-option-${opcao}"]
 
 
 
@@ -60,6 +69,13 @@ Clique no botao Prosseguir
 Clique no botao Concluir
     Click Element    //html/body/app-root/mat-drawer-container/mat-drawer-content/tela-cadastro/app-endereco-form/div/form/button
 
+Clique no botao Concluir medico
+    Click Element    //html/body/app-root/mat-drawer-container/mat-drawer-content/app-cadastro-profissional/app-endereco-form/div/form/button
+
+
+Verificar se cadastrou medico com sucesso
+     Element Should Exist    //html/body/app-root/p-toast/
+
 Verifica se "${nome}" cadastrou-se com sucesso
     ${nome_logado}    Get Text    //html/body/app-root/mat-drawer-container/mat-drawer-content/mat-toolbar/mat-toolbar-row/div/h4[1]
     Should Be Equal As Strings    ${nome_logado}    ${nome}
@@ -71,6 +87,7 @@ Clicar em login
     Click Button    //html/body/app-root/mat-drawer-container/mat-drawer-content/app-login/div/div/form/div/button
 
 Clicar em prossegir
+    Scroll Element Into View    //html/body/app-root/mat-drawer-container/mat-drawer-content/app-cadastro-profissional/div/form/button
     Click Button    //html/body/app-root/mat-drawer-container/mat-drawer-content/app-cadastro-profissional/div/form/button
 
 Clicar em adicionar medico
@@ -85,3 +102,17 @@ Fechar toast
 Fechar o navegador
 #    Capture Page Screenshot
     Close Browser
+
+
+Clicar em cancelar
+    Scroll Element Into View     //*[contains(text(),'Cancelar')]
+    Click Element    //*[contains(text(),'Cancelar')]
+
+Verificar se cancelou
+    Should Exist    //*[contains(text(),'Cancelado')]
+
+Verificar se ha medicos disponiveis
+    Should Exist    //*[contains(text(),'CRM')]
+
+Verificar se NAO ha botao "${texto_botao}" na nav lateral
+   Should Not Exist    //html/body/app-root/mat-drawer-container/mat-drawer/div/button[contains(.,'${texto_botao}')]
