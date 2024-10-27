@@ -42,8 +42,8 @@ Caso de Teste 04 - Criar conta de medico"
     Digitar "41998798238" no input "telefone" em cadastro medico
     Digitar "123qwe" no input "senha" em cadastro medico
 
-    Selecionar "10" em "inicioExpediente" no cadastro medico
-    Selecionar "12" em "fimExpediente" no cadastro medico
+    Selecionar "10" em "inicioExpediente"
+    Selecionar "12" em "fimExpediente"
 
 
     Marcar "16" em "especialidadesIds"

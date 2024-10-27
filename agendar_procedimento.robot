@@ -24,8 +24,13 @@ Caso de Teste 02 - Sair do usuario"
     Clicar em Agendar
     Sleep    1
     Ir para o proximo mes
+    Sleep    1
+    Selecionar dia "3 de novembro de 2024"
+    Selecionar "11" em "horarioProcedimento"
+    Abrir NavLateral
+    Agendar
 
-    Sleep    100
+
 
 
 
