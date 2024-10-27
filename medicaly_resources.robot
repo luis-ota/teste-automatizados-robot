@@ -17,6 +17,9 @@ Abrir NavLateral
 Clicar no botão "${texto_botao}" da NavLateral
     Click Element    //html/body/app-root/mat-drawer-container/mat-drawer/div/button[contains(.,'${texto_botao}')]
 
+Clicar em agendar
+    Click Element    //html/body/app-root/mat-drawer-container/mat-drawer-content/app-list-medicos/div/div/mat-card[5]/mat-card-actions/button
+
 
 Digitar "${input}" no input "${campo}" do formulario de cadastro
     Click Element   //*[contains(text(), "${campo}")]
@@ -24,6 +27,9 @@ Digitar "${input}" no input "${campo}" do formulario de cadastro
 
 Digitar "${input}" no input "${campo}" em cadastro medico
     Input Text      //input[contains(@ng-reflect-name, "${campo}")]    ${input}
+
+Ir para o proximo mes
+    Click Button    //html/body/app-root/mat-drawer-container/mat-drawer-content/app-selecionar-horario/div/form/div[2]/mat-card/mat-calendar/mat-calendar-header/div/div/button[3]
 
 Selecionar "${input}" em "${naoaguentomais}" no cadastro medico
     Click Element    //*[contains(@ng-reflect-name, "${naoaguentomais}")]
